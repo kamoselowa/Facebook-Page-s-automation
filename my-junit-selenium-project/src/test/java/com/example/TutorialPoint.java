@@ -23,17 +23,14 @@ import org.openqa.selenium.TimeoutException;
 public class TutorialPoint {
     private WebDriver driver;
 
-    /*
-     * @BeforeEach
-     * public void Setup() {
-     * System.setProperty("webdriver.chrome.driver",
-     * "C:\\Users\\kamo's hunny\\Desktop\\JunitTests\\ChmDRiver\\chromedriver-win64\\chromedriver.exe"
-     * );
-     * driver = new ChromeDriver();
-     * driver.manage().window().maximize();
-     * driver.navigate().to("https://www.facebook.com/");
-     * }
-     */
+    @BeforeEach
+    public void Setup() {
+        System.setProperty("webdriver.chrome.driver",
+                "C:\\Users\\kamo's hunny\\Desktop\\JunitTests\\ChmDRiver\\chromedriver-win64\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.navigate().to("https://www.facebook.com/");
+    }
 
     @Test
     public void TitleVerification() {
@@ -129,7 +126,7 @@ public class TutorialPoint {
 
         // Perform your action on the PostBar element (e.g., click)
         PostBar.click();
-
+        // webdriver closes -->>
         driver.quit();
     }
 }
